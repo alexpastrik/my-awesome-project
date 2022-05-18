@@ -6,7 +6,6 @@ h1 {
   font-family: monospace;
   padding: 0;
 }
-
 h2 {
   color: #c98888;
   font-size: 60px;
@@ -16,12 +15,10 @@ h2 {
   padding-left: 1em;
   text-align: center;
 }
-
 form {
   display: block;
   text-align: right;
 }
-
 img {
   width: 30%;
   padding: 0;
@@ -44,3 +41,20 @@ div.col {
   top: 20px;
   right: 10px;
 }
+
+  .btn-primary {
+    background-color: #faeded;
+    border-color: #faeded;
+    color: pink;
+    transition: all 200ms ease-in-out;
+  }
+  
+  .btn-primary:hover {
+    background: gainsboro;
+    border-color: black
+    cursor: pointer;
+  }
+
+  .container {
+    padding: 20px;
+  }
