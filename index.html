@@ -1,55 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Weather App</title>
     <meta charset="UTF-8" />
-    
-    <link rel="stylesheet" href="src/style.css">
-    
-    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Anek+Gujarati:wght@200&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  </head>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
+    <link rel="stylesheet" href="src/style.css" />
+    <title>Weather App</title>
+  </head>
   <body>
     <div class="container">
-      <div class="searchEngine">
-        <form id="search-form">
-          <div class="row">
-            <div class="col-7">
-        <input
-          type="text"
-          placeholder="Search for a city"
-          autocomplete="off"
-          autofocus="on"
-          id="search-text-input"
-        />
-      </div>
-      <div class="col-2">
-<input type="submit" class="btn btn-primary" value="search" />
-      </div>
-      <button type="button" class="btn btn-primary">
-        Current City
-      </button>
-        </div>
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <form id="search-form" class="mb-3">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  type="search"
+                  placeholder="Type a city.."
+                  class="form-control"
+                  id="city-input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-primary w-100"
+                />
+              </div>
+            </div>
+          </form>
+          <div class="overview">
+            <h1 id="city"></h1>
+            <ul>
+              <li>Last updated: <span id="date"></span></li>
+              <li id="description"></li>
+            </ul>
+            <div class="row">
+              <div class="col-6">
+                <div class="clearfix weather-temperature">
+                  <img src="" alt="" id="icon" class="float-left" />
+                  <strong id="temperature"></strong>
+                  <span class="units"
+                    ><a href="#" id="celsius-link" class="active">°C</a> |
+                    <a href="#" id="fahrenheit-link">°F</a></span
+                  >
+                </div>
+              </div>
+              <div class="col-6">
+                <ul>
+                  <li>Humidity: <span id="humidity"></span>%</li>
+                  <li>Wind: <span id="wind"></span>km/h</li>
+                </ul>
+              </div>
+            </div>
           </div>
-      
-            </form>
-
-      <h1>11°</h1>
-      <h2>Waterloo, ON</h2>
-
-    
+        <div class="weather-forecast" id="forecast"></div>
+        
       <div class="container second" id="second-container">
           <div class="row">
             <div class="col">
@@ -96,7 +113,18 @@
                             </div>
                           </div>
              </div>
-    <small>
+                </div>
+              </div>
+              <div class="col-6">
+                <ul>
+                  <li>Humidity: <span id="humidity"></span>%</li>
+                  <li>Wind: <span id="wind"></span>km/h</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </div>
+   <small>
       <a href="https://graceful-bavarois-dc5946.netlify.app/" target="_blank"
         >Open Source Code</a
       >
@@ -105,4 +133,3 @@
     <script src="src/index.js"></script>
   </body>
 </html>
-    
